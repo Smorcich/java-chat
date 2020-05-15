@@ -5,13 +5,15 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.*;
+import java.util.Scanner;
 
 public class Client {
 
 	public static void main(String[] args) throws UnknownHostException, IOException {
 		
 		Socket client = new Socket("127.0.0.1", 8000);
-
+		Scanner scan = new Scanner(System.in);
+		
         BufferedWriter writer = new BufferedWriter(
                 new OutputStreamWriter(
                         client.getOutputStream()
@@ -24,7 +26,9 @@ public class Client {
                 )
         );
         
-        writer.write("q server");
+        String message = scan.nextLine();
+        
+        writer.write(message);
         writer.flush();
         
         client.close();
