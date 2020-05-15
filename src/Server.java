@@ -11,7 +11,10 @@ public class Server {
 	public static void main(String[] args) throws IOException {
 		
 		ServerSocket server = new ServerSocket(8000);
+        
+		while (true) {
 		Socket clientSocket = server.accept();
+		
         BufferedWriter writer = new BufferedWriter(
                 new OutputStreamWriter(
                         clientSocket.getOutputStream()
@@ -23,11 +26,15 @@ public class Server {
                         clientSocket.getInputStream()
                 )
         );
-		   
-	    System.out.println(reader.readLine());
-		
-        server.close();
-        clientSocket.close();
+			
+        String clientRequest = reader.readLine();
+        
+	    System.out.println(clientRequest);
+	    
+
+		}
+        
+
 	}
 
 }

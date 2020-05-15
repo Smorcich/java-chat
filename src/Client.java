@@ -25,7 +25,7 @@ public class Client {
                         client.getInputStream()
                 )
         );
-        
+
         String message = scan.nextLine();
         
         writer.write(message);
