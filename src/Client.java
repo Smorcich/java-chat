@@ -26,10 +26,11 @@ public class Client {
                 )
         );
 
-        String message = scan.nextLine();
-        
-        writer.write(message);
-        writer.flush();
+
+            String message = scan.nextLine();
+            writer.write(message);
+            writer.flush();
+
         scan.close();
         client.close();
 	}

@@ -11,9 +11,10 @@ public class Server {
 	public static void main(String[] args) throws IOException {
 		
 		ServerSocket server = new ServerSocket(8000);
-		
 		while(true) {
+		
 			Socket clientSocket = server.accept();
+
 		    Multithread multithread = new Multithread(clientSocket);
 		    multithread.start();
 		}

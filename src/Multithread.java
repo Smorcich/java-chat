@@ -33,8 +33,13 @@ public class Multithread extends Thread {
                         clientSocket.getInputStream()
                 )
         );
-        
         String clientRequest = reader.readLine();
-	    System.out.println(clientRequest);
+        /*while((clientRequest) != null ) {
+        	if (clientRequest.equals("exit")) {
+        		break;
+        	}
+        }
+        */
+        System.out.println(clientRequest);
 	}
 }
