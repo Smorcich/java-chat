@@ -30,7 +30,7 @@ public class Client {
         
         writer.write(message);
         writer.flush();
-        
+        scan.close();
         client.close();
 	}
 
