@@ -1,4 +1,3 @@
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -25,12 +24,16 @@ public class Client {
                         client.getInputStream()
                 )
         );
-
-
+        
+        while(true) {
             String message = scan.nextLine();
             writer.write(message);
             writer.flush();
-
+            if(message.contentEquals("exit")) {
+            	break;
+            }
+        }
+        writer.close();
         scan.close();
         client.close();
 	}
