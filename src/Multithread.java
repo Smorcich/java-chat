@@ -33,28 +33,11 @@ public class Multithread extends Thread {
                         clientSocket.getInputStream()
                 )
         );
-<<<<<<< HEAD
-<<<<<<< HEAD
         String clientRequest;
         while(true) {
         	if((clientRequest = reader.readLine()) != null) {
         		System.out.println(clientRequest);
         	}
         }
-=======
-        
-        String clientRequest = reader.readLine();
-	    System.out.println(clientRequest);
->>>>>>> parent of ec3deb3... 1.4.1
-=======
-        String clientRequest = reader.readLine();
-        /*while((clientRequest) != null ) {
-        	if (clientRequest.equals("exit")) {
-        		break;
-        	}
-        }
-        */
-        System.out.println(clientRequest);
->>>>>>> parent of fb852de... 1.4.2
 	}
 }
