@@ -1,3 +1,4 @@
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -25,6 +26,7 @@ public class Client {
                 )
         );
 <<<<<<< HEAD
+<<<<<<< HEAD
         
         while(true) {
             String message = scan.nextLine();
@@ -42,6 +44,14 @@ public class Client {
         writer.write(message);
         writer.flush();
 >>>>>>> parent of ec3deb3... 1.4.1
+=======
+
+
+            String message = scan.nextLine();
+            writer.write(message);
+            writer.flush();
+
+>>>>>>> parent of fb852de... 1.4.2
         scan.close();
         client.close();
 	}
