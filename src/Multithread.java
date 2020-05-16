@@ -33,11 +33,17 @@ public class Multithread extends Thread {
                         clientSocket.getInputStream()
                 )
         );
+<<<<<<< HEAD
         String clientRequest;
         while(true) {
         	if((clientRequest = reader.readLine()) != null) {
         		System.out.println(clientRequest);
         	}
         }
+=======
+        
+        String clientRequest = reader.readLine();
+	    System.out.println(clientRequest);
+>>>>>>> parent of ec3deb3... 1.4.1
 	}
 }

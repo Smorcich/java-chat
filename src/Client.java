@@ -24,6 +24,7 @@ public class Client {
                         client.getInputStream()
                 )
         );
+<<<<<<< HEAD
         
         while(true) {
             String message = scan.nextLine();
@@ -34,6 +35,13 @@ public class Client {
             }
         }
         writer.close();
+=======
+
+        String message = scan.nextLine();
+        
+        writer.write(message);
+        writer.flush();
+>>>>>>> parent of ec3deb3... 1.4.1
         scan.close();
         client.close();
 	}
