@@ -27,7 +27,7 @@ public class Client {
         
         while(true) {
             String message = scan.nextLine();
-            writer.write(message);
+            writer.write(message + "\r\n");
             writer.flush();
             if(message.contentEquals("exit")) {
             	break;
