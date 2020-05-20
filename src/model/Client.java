@@ -1,3 +1,4 @@
+package model;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -27,6 +28,7 @@ public class Client {
         
         while(true) {
             String message = scan.nextLine();
+            String name = scan.nextLine();
             writer.write(message + "\r\n");
             writer.flush();
             if(message.contentEquals("exit")) {
