@@ -8,51 +8,29 @@ import org.hibernate.cfg.Configuration;
 
 import java.util.List;
 
+import model.Client;
+
 public class DeveloperRunner {
     private static SessionFactory sessionFactory;
-
     public static void main(String[] args) {
         sessionFactory = new Configuration().configure().buildSessionFactory();
 
         DeveloperRunner developerRunner = new DeveloperRunner();
+        Developer dev = new Developer();
+        Client client = new Client();
 
-        System.out.println("Adding developer's records to the DB");
-        /**
-         *  Adding developer's records to the database (DB)
-         */
-        developerRunner.addDeveloper("QWE");
-        developerRunner.addDeveloper("GDF");
-        developerRunner.addDeveloper("Peter");
-
-        System.out.println("List of developers");
-        /**
-         * List developers
-         */
         List<Developer> developers = developerRunner.listDevelopers();
         for (Developer developer : developers) {
             System.out.println(developer);
         }
-        System.out.println("===================================");
-        System.out.println("Removing Some Developer and updating Proselyte");
-        /**
-         * Update and Remove developers
-         */
-        developerRunner.updateDeveloper(10);
-        developerRunner.removeDeveloper(11);
 
-        System.out.println("Final list of developers");
-        /**
-         * List developers
-         */
         developers = developerRunner.listDevelopers();
         for (Developer developer : developers) {
             System.out.println(developer);
         }
-        System.out.println("===================================");
-
     }
-
-    public void addDeveloper(String name) {
+    
+    public void addDeveloper(String name, SessionFactory sessionFactory) {
         Session session = sessionFactory.openSession();
         Transaction transaction = null;
 

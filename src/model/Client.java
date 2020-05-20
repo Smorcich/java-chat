@@ -7,28 +7,27 @@ import java.io.OutputStreamWriter;
 import java.net.*;
 import java.util.Scanner;
 
-public class Client {
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
 
+import model.Developer;
+import model.DeveloperRunner;
+
+public class Client {
+	private static SessionFactory sessionFactory;
 	public static void main(String[] args) throws UnknownHostException, IOException {
 		
-		Socket client = new Socket("127.0.0.1", 8000);
+		Developer developer = new Developer();
+		DeveloperRunner developerRunner = new DeveloperRunner();
+
 		Scanner scan = new Scanner(System.in);
 		
-        BufferedWriter writer = new BufferedWriter(
-                new OutputStreamWriter(
-                        client.getOutputStream()
-                )
-        );
-        
-        BufferedReader reader = new BufferedReader(
-                new InputStreamReader(
-                        client.getInputStream()
-                )
-        );
-        
+		sessionFactory = new Configuration().configure().buildSessionFactory();
+        String name = scan.nextLine();
+        developerRunner.addDeveloper(name, sessionFactory);
+        /*
         while(true) {
             String message = scan.nextLine();
-            String name = scan.nextLine();
             writer.write(message + "\r\n");
             writer.flush();
             if(message.contentEquals("exit")) {
@@ -38,6 +37,7 @@ public class Client {
         writer.close();
         scan.close();
         client.close();
+        */
 	}
 
 }
